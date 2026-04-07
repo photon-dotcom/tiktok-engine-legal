@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlashPublisher — Authorization</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background: #0D1117; color: #E6EDF3; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
+    .card { background: #161B22; border: 1px solid #30363D; border-radius: 12px; padding: 40px; max-width: 500px; text-align: center; }
+    h1 { color: #FFD700; font-size: 24px; margin-bottom: 16px; }
+    .code { background: #0D1117; border: 2px solid #FFD700; border-radius: 8px; padding: 16px; font-family: monospace; font-size: 14px; word-break: break-all; margin: 20px 0; user-select: all; cursor: pointer; }
+    .hint { color: #8B949E; font-size: 14px; }
+    .error { color: #FF3333; }
+    button { background: #FFD700; color: #0D1117; border: none; border-radius: 8px; padding: 12px 24px; font-weight: 700; font-size: 14px; cursor: pointer; margin-top: 12px; }
+    button:hover { background: #FFE033; }
+    #copied { color: #00CC66; font-size: 13px; margin-top: 8px; display: none; }
+  </style>
+</head>
+<body>
+  <div class="card" id="content"></div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('code');
+    const error = params.get('error');
+    const el = document.getElementById('content');
+
+    if (code) {
+      el.innerHTML = `
+        <h1>✓ Authorization Successful</h1>
+        <p class="hint">Copy this code and paste it into your terminal:</p>
+        <div class="code" id="code" onclick="copyCode()">${code}</div>
+        <button onclick="copyCode()">Copy Code</button>
+        <div id="copied">✓ Copied to clipboard!</div>
+      `;
+    } else if (error) {
+      const desc = params.get('error_description') || 'Unknown error';
+      el.innerHTML = `<h1 class="error">Authorization Failed</h1><p>${error}: ${desc}</p>`;
+    } else {
+      el.innerHTML = `<h1>FlashPublisher</h1><p class="hint">This page handles OAuth callbacks.</p>`;
+    }
+
+    function copyCode() {
+      navigator.clipboard.writeText(document.getElementById('code').textContent);
+      document.getElementById('copied').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
