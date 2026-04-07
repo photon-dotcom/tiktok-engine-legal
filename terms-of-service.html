@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service — FlashPublisher</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0D1117;
+      --surface: #161B22;
+      --border: #30363D;
+      --gold: #FFD700;
+      --text: #E6EDF3;
+      --text-muted: #8B949E;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+    }
+
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--gold);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--bg);
+    }
+
+    .logo-text {
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      margin-left: 24px;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--gold); }
+
+    main {
+      padding: 60px 0 80px;
+      flex: 1;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .effective-date {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-top: 40px;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    ul {
+      padding-left: 24px;
+      margin-bottom: 12px;
+    }
+
+    li {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    a { color: var(--gold); }
+
+    strong { color: var(--text); font-weight: 600; }
+
+    footer {
+      margin-top: auto;
+      border-top: 1px solid var(--border);
+      padding: 24px 0;
+    }
+
+    footer .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    footer p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 24px; }
+      header .container { flex-direction: column; gap: 12px; }
+      nav a { margin-left: 0; margin-right: 16px; }
+      footer .container { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <a href="/tiktok-engine-legal/" class="logo">
+        <div class="logo-icon">FF</div>
+        <span class="logo-text">FlashPublisher</span>
+      </a>
+      <nav>
+        <a href="/tiktok-engine-legal/privacy-policy.html">Privacy Policy</a>
+        <a href="/tiktok-engine-legal/terms-of-service.html">Terms of Service</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1>Terms of Service</h1>
+      <p class="effective-date">Effective date: April 7, 2026</p>
+
+      <p>These Terms of Service ("Terms") govern the use of <strong>FlashPublisher</strong> ("the App," "we," "us," or "our"), an automated video publishing application developed and operated by Abel Avilés ("the Developer").</p>
+
+      <p>By using <strong>FlashPublisher</strong>, you agree to be bound by these Terms. If you do not agree to these Terms, do not use the App.</p>
+
+      <h2>1. Description of Service</h2>
+      <p><strong>FlashPublisher</strong> is an internal tool that publishes original video content to TikTok via the Content Posting API. The App is designed for use by the Developer to publish content to the Fichajes Flash TikTok channel. <strong>FlashPublisher</strong> is not a consumer-facing application and is not intended for use by the general public.</p>
+
+      <h2>2. Eligibility</h2>
+      <p><strong>FlashPublisher</strong> is operated solely by the Developer. Use of the App requires authorization through TikTok's OAuth 2.0 flow. Only the Developer's TikTok account is authorized to use the App.</p>
+
+      <h2>3. User Responsibilities</h2>
+      <p>As the sole user of <strong>FlashPublisher</strong>, the Developer agrees to:</p>
+      <ul>
+        <li>Comply with TikTok's <a href="https://www.tiktok.com/legal/page/global/tik-tok-developer-terms-of-service/en" target="_blank">Developer Terms of Service</a> and <a href="https://www.tiktok.com/community-guidelines" target="_blank">Community Guidelines</a>.</li>
+        <li>Only publish original content that does not infringe on the intellectual property rights of third parties.</li>
+        <li>Not use the App to publish content that is harmful, misleading, deceptive, or violates any applicable law.</li>
+        <li>Maintain the security of OAuth credentials and API keys associated with <strong>FlashPublisher</strong>.</li>
+        <li>Comply with all applicable laws and regulations, including data protection laws.</li>
+      </ul>
+
+      <h2>4. Content</h2>
+      <p>All video content published through <strong>FlashPublisher</strong> is original content created by the Developer's content pipeline. The Developer retains full ownership of all content published through the App.</p>
+      <p>The Developer is solely responsible for ensuring that all content published through <strong>FlashPublisher</strong> complies with TikTok's policies and applicable laws.</p>
+
+      <h2>5. Intellectual Property</h2>
+      <p><strong>FlashPublisher</strong> and its source code are the property of Abel Avilés. The App is not open source and may not be copied, modified, or distributed without the Developer's written consent.</p>
+
+      <h2>6. Third-Party Services</h2>
+      <p><strong>FlashPublisher</strong> integrates with TikTok's Content Posting API. Use of TikTok's services is governed by TikTok's own Terms of Service and Privacy Policy. The Developer is not responsible for the availability, functionality, or policies of TikTok's platform or API.</p>
+
+      <h2>7. Disclaimer of Warranties</h2>
+      <p><strong>FlashPublisher</strong> is provided "as is" without warranties of any kind, either express or implied. The Developer does not warrant that the App will be uninterrupted, error-free, or free of harmful components.</p>
+
+      <h2>8. Limitation of Liability</h2>
+      <p>To the maximum extent permitted by applicable law, the Developer shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from the use of <strong>FlashPublisher</strong>.</p>
+
+      <h2>9. Modifications</h2>
+      <p>The Developer reserves the right to modify these Terms at any time. Updated Terms will be posted on this page with a revised effective date.</p>
+
+      <h2>10. Governing Law</h2>
+      <p>These Terms are governed by and construed in accordance with the laws of Spain, without regard to conflict of law principles.</p>
+
+      <h2>11. Contact</h2>
+      <p>For questions about these Terms of Service or <strong>FlashPublisher</strong>, contact:</p>
+      <p>Abel Avilés<br>
+      Email: <a href="mailto:abel@abelaviles.com">abel@abelaviles.com</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 FlashPublisher — Abel Avilés</p>
+      <div class="footer-links">
+        <a href="/tiktok-engine-legal/privacy-policy.html">Privacy Policy</a>
+        <a href="/tiktok-engine-legal/terms-of-service.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

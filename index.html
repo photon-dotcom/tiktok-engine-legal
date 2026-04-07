@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlashPublisher — Automated Video Publishing for Fichajes Flash</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0D1117;
+      --surface: #161B22;
+      --border: #30363D;
+      --gold: #FFD700;
+      --gold-dim: #FFD70033;
+      --text: #E6EDF3;
+      --text-muted: #8B949E;
+      --link: #FFD700;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    /* Header */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+    }
+
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--gold);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--bg);
+    }
+
+    .logo-text {
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      margin-left: 24px;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--gold); }
+
+    /* Hero */
+    .hero {
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--gold-dim);
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    h1 span { color: var(--gold); }
+
+    .hero p {
+      font-size: 17px;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* Features */
+    .features {
+      padding: 40px 0 60px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .feature {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .feature-icon {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .feature h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .feature p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* How it works */
+    .how-it-works {
+      padding: 40px 0 60px;
+    }
+
+    .how-it-works h2 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .step-number {
+      background: var(--gold);
+      color: var(--bg);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+
+    .step-content h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .step-content p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* About */
+    .about {
+      padding: 40px 0 60px;
+    }
+
+    .about h2 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .about p {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: auto;
+      border-top: 1px solid var(--border);
+      padding: 24px 0;
+    }
+
+    footer .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    footer p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .feature-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 28px; }
+      header .container { flex-direction: column; gap: 12px; }
+      nav a { margin-left: 0; margin-right: 16px; }
+      footer .container { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <a href="/" class="logo">
+        <div class="logo-icon">FF</div>
+        <span class="logo-text">FlashPublisher</span>
+      </a>
+      <nav>
+        <a href="/tiktok-engine-legal/privacy-policy.html">Privacy Policy</a>
+        <a href="/tiktok-engine-legal/terms-of-service.html">Terms of Service</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="badge">Content Posting API Integration</div>
+        <h1>Automated Video Publishing for <span>Fichajes Flash</span></h1>
+        <p>FlashPublisher connects the Fichajes Flash content pipeline to TikTok, enabling scheduled publishing of original Spanish-language football analysis videos via the Content Posting API.</p>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <div class="feature-grid">
+          <div class="feature">
+            <div class="feature-icon">⚡</div>
+            <h3>Automated Publishing</h3>
+            <p>Videos produced by our pipeline are published to TikTok on a schedule — no manual upload needed.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">⚽</div>
+            <h3>Original Football Content</h3>
+            <p>La Liga transfer analysis, statistical predictions, and data-driven commentary — all original content.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🎬</div>
+            <h3>Custom Video Rendering</h3>
+            <p>Videos are rendered with Remotion (React-based animation framework), not repurposed from other platforms.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🇪🇸</div>
+            <h3>Castilian Spanish</h3>
+            <p>All content is produced in Castilian Spanish for the Spanish football audience.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works">
+      <div class="container">
+        <h2>How FlashPublisher Works</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Content Creation</h3>
+              <p>Our pipeline generates original video scripts, voiceovers, and animated graphics for Spanish football analysis content.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Video Rendering</h3>
+              <p>Videos are rendered locally using Remotion, producing 1080×1920 vertical videos with animated scenes and karaoke-style captions.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>TikTok Publishing</h3>
+              <p>FlashPublisher uses TikTok's Content Posting API to upload the rendered video with the appropriate title, description, and privacy settings.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="container">
+        <h2>About</h2>
+        <p>FlashPublisher is developed by Abel Avilés as an internal tool for the Fichajes Flash TikTok channel (@fichajesflash). It is not a consumer-facing application — it serves as the publishing bridge between an automated content pipeline and TikTok's Content Posting API.</p>
+        <p>The app uses the <strong>video.publish</strong> and <strong>video.upload</strong> scopes to post original video content to a single TikTok account owned by the developer.</p>
+        <p>For questions or concerns, contact: <a href="mailto:abel@abelaviles.com" style="color: var(--gold);">abel@abelaviles.com</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 FlashPublisher — Abel Avilés</p>
+      <div class="footer-links">
+        <a href="/tiktok-engine-legal/privacy-policy.html">Privacy Policy</a>
+        <a href="/tiktok-engine-legal/terms-of-service.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
